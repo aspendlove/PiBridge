@@ -7,9 +7,15 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+ai_socket = socket()
+host = "100.73.110.125"
+port = 2100
+ai_socket.connect((host, port))  # connect to the server
+
 
 @app.route('/', methods=['POST'])
 def receive_post():
+    global ai_socket
     channels = 1
     fs = 16000  # Record at 44100 samples per second
     now = datetime.now()
@@ -20,22 +26,23 @@ def receive_post():
     # Access the POST data from the request object
     data = request.data
     # Save the recorded data as a WAV file
-    waveFile = wave.open(filename, 'wb')
-    waveFile.setnchannels(channels)
-    waveFile.setsampwidth(2)
-    waveFile.setframerate(fs)
-    waveFile.writeframes(data)
-    waveFile.close()
+    wave_file = wave.open(filename, 'wb')
+    wave_file.setnchannels(channels)
+    wave_file.setsampwidth(2)
+    wave_file.setframerate(fs)
+    wave_file.writeframes(data)
+    wave_file.close()
 
     print(subprocess.check_output("pwd"))
-    command = "./whisper -m models/ggml-small.en.bin -f " + filename + " -t 15 -nt -np"
+    command = "./whisper -m models/ggml-tiny.en.bin -f " + filename + " -t 15 -nt -np"
     transcription = subprocess.check_output(command, shell=True)
 
-    host = gethostname()
-    port = 4567
-    with socket() as client_socket:
-        client_socket.connect((host, port))  # connect to the server
-        client_socket.sendall(transcription + b"\n\n")
+    # host = "100.73.110.125"
+    # port = 2100
+    # with socket() as client_socket:
+    #     client_socket.connect((host, port))  # connect to the server
+    #     client_socket.sendall(transcription + b"\n\n")
+    ai_socket.sendall(transcription + b"\n\n")
 
     return ""
 
