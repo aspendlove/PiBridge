@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b13fc925-8dfb-410b-ae59-84e4867967fb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PiBridge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PiBridge.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bridge.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bridge.py" afterDir="false" />
     </list>
@@ -19,6 +18,17 @@
       <list>
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -109,7 +119,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
+        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
       </set>
     </attachedChunks>
   </component>
@@ -125,6 +135,16 @@
       <workItem from="1710024067357" duration="5218000" />
       <workItem from="1710035465575" duration="1518000" />
       <workItem from="1710105812766" duration="2274000" />
+      <workItem from="1710191250964" duration="346000" />
+      <workItem from="1710193542308" duration="2212000" />
+      <workItem from="1710280581941" duration="2177000" />
+      <workItem from="1710360512198" duration="1445000" />
+      <workItem from="1710969782123" duration="1103000" />
+      <workItem from="1711756056616" duration="768000" />
+      <workItem from="1711929153300" duration="5119000" />
+      <workItem from="1712461112397" duration="1364000" />
+      <workItem from="1712859574968" duration="947000" />
+      <workItem from="1713048196719" duration="2744000" />
     </task>
     <servers />
   </component>
@@ -132,8 +152,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PiBridge$Flask__Bridge_py_.coverage" NAME="Flask (Bridge.py) Coverage Results" MODIFIED="1710108140380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PiBridge$Bridge.coverage" NAME="Bridge Coverage Results" MODIFIED="1710019424689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PiBridge$RunBridge.coverage" NAME="RunBridge Coverage Results" MODIFIED="1710026514133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/PiBridge$Flask__Bridge_py_.coverage" NAME="Flask (Bridge.py) Coverage Results" MODIFIED="1713131858737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
