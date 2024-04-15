@@ -13,6 +13,18 @@ ai_port = 2100
 ai_socket.connect((ai_host, ai_port))  # connect to the server
 
 
+@app.route("/reset/", methods=['GET', 'POST'])
+def reset():
+    global ai_socket
+    global ai_host
+    global ai_port
+    print("reset")
+    ai_socket.close()
+    ai_socket = socket()
+    ai_socket.connect((ai_host, ai_port))
+    return "", 200
+
+
 @app.route('/', methods=['POST'])
 def receive_post():
     global ai_socket
@@ -33,7 +45,7 @@ def receive_post():
     wave_file.writeframes(data)
     wave_file.close()
 
-    command = "./whisper -m models/ggml-tiny.en.bin -f " + filename + " -t 15 -nt -np"
+    command = "./whisper -m models/ggml-base.en.bin -f " + filename + " -t 16 -nt -np"
     transcription = subprocess.check_output(command, shell=True)
     ai_socket.sendall(transcription + b"\n\n")
     return_code = ai_socket.recv(1024)
@@ -44,4 +56,4 @@ def receive_post():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=False, port=4567, host='0.0.0.0')
